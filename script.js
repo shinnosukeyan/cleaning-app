@@ -1,5 +1,5 @@
 // Google Sheets API設定（後で設定します）
-const GOOGLE_SHEETS_API_KEY = 'YOUR_API_KEY_HERE';
+const GOOGLE_SHEETS_API_KEY = 'AIzaSyAg4ivdU3fTQ1ol48GE03_0RvKZ-_plEDM';
 const SPREADSHEET_ID = '14uACNMQ33OebeTnyXHwLzEC4WEkqhZTlP2pMzmp-zJQ';
 const SHEET_NAME = 'シート1';
 
