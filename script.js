@@ -1,5 +1,5 @@
-// Google Sheets API設定（後で設定します）
-const GOOGLE_SHEETS_API_KEY = 'AIzaSyAg4ivdU3fTQ1ol48GE03_0RvKZ-_plEDM';
+// Google Sheets API設定
+const GOOGLE_SHEETS_API_KEY = 'AIzaSyAg4ivdU3fTQ1ol48GE03_0RvKZ-_plEDM'; // ここに実際のAPIキーを入力してください
 const SPREADSHEET_ID = '14uACNMQ33OebeTnyXHwLzEC4WEkqhZTlP2pMzmp-zJQ';
 const SHEET_NAME = 'シート1';
 
@@ -199,27 +199,78 @@ function showValidationError(errors) {
 
 async function sendToGoogleSheets(date, reporterName, checklistValues) {
     try {
-        // Google Sheets APIを使用してデータを送信
-        const headers = [
-            '報告日時', '報告者名',
-            ...allChecklistItems
-        ];
+        // ヘッダー行を確認/作成
+        await ensureHeaderRow();
         
+        // データを準備
         const values = [
             date.toLocaleString('ja-JP'),
             reporterName,
             ...checklistValues
         ];
         
-        // ここでGoogle Sheets APIを呼び出します
-        // 実際のAPI呼び出しは後で実装します
-        console.log('送信データ:', { headers, values });
+        // Google Sheets APIでデータを追加
+        const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}:append?valueInputOption=RAW&key=${GOOGLE_SHEETS_API_KEY}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                values: [values]
+            })
+        });
         
-        // 一時的にダミーの成功レスポンスを返す
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`API Error: ${errorData.error?.message || 'Unknown error'}`);
+        }
+        
+        const result = await response.json();
+        console.log('Google Sheets送信成功:', result);
+        
         return { success: true };
         
     } catch (error) {
         console.error('Google Sheets送信エラー:', error);
         throw error;
+    }
+}
+
+async function ensureHeaderRow() {
+    try {
+        // 既存のデータを確認
+        const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}!A1:ZZ1?key=${GOOGLE_SHEETS_API_KEY}`);
+        
+        if (!response.ok) {
+            throw new Error('Failed to check header row');
+        }
+        
+        const data = await response.json();
+        
+        // ヘッダーが存在しない場合は作成
+        if (!data.values || data.values.length === 0) {
+            const headers = [
+                '報告日時', '報告者名',
+                ...allChecklistItems
+            ];
+            
+            const headerResponse = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}!A1:append?valueInputOption=RAW&key=${GOOGLE_SHEETS_API_KEY}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    values: [headers]
+                })
+            });
+            
+            if (!headerResponse.ok) {
+                throw new Error('Failed to create header row');
+            }
+        }
+        
+    } catch (error) {
+        console.error('Header row check error:', error);
+        // ヘッダー作成に失敗してもデータ送信は続行
     }
 }
