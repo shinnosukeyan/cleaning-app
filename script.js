@@ -1,5 +1,5 @@
 // Google Sheets API設定
-const GOOGLE_SHEETS_API_KEY = 'AIzaSyAg4ivdU3fTQ1ol48GE03_0RvKZ-_plEDM'; // ここに実際のAPIキーを入力してください
+const GOOGLE_SHEETS_API_KEY = 'YOUR_API_KEY_HERE'; // ここに実際のAPIキーを入力してください
 const SPREADSHEET_ID = '14uACNMQ33OebeTnyXHwLzEC4WEkqhZTlP2pMzmp-zJQ';
 const SHEET_NAME = 'シート1';
 
@@ -60,7 +60,6 @@ const allChecklistItems = [
     "ティッシュ",
     "床シート",
     "ゴミ袋",
-    "不足報告",
     "LINEで報告_消耗品",
     
     // 布巾・ダスター
