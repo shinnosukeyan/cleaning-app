@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心斎橋店 清掃日誌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>心斎橋店 清掃日誌</h1>
+        
+        <form id="cleaningForm">
+            <div class="form-group">
+                <label for="reporterName" class="required-label">記載者</label>
+                <input type="text" id="reporterName" name="reporterName" required>
+            </div>
+            
+            <fieldset>
+                <legend>■ 入室前チェック</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="ポストチェック" data-required="true">ポストチェック<span class="required-asterisk">*</span> 【右7、左2】(広告あれば捨てる)</label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="郵便物あり">郵便物あり <span class="lemon-yellow-highlight">※ある場合のみ</span>、アルバムへ</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="エレベーター点検日チェック" data-required="true">エレベーター点検日チェック<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="LINEで報告_エレベーター点検日"><span class="line-report-highlight">LINEで報告</span> <span class="lemon-yellow-highlight">※カレンダーに点検日の記載がない場合のみ</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="キーボックスチェック" data-required="true">キーボックスチェック<span class="required-asterisk">*</span>【3104】</label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="予備キーで補填">予備キーで補填 <span class="lemon-yellow-highlight">※キーがない場合のみ</span></label>
+                    <label><input type="checkbox" name="checklist" value="LINEで報告_キーなし"><span class="line-report-highlight">LINEで報告</span> <span class="lemon-yellow-highlight">※キーがない場合のみ</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="回収ゴミ撮影">回収ゴミ撮影 <span class="lemon-yellow-highlight">※ある場合のみ</span>、アルバムへ</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 最初に</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="マイク充電" data-required="true">マイク充電<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="忘れ物チェック" data-required="true">忘れ物チェック<span class="required-asterisk">*</span> (シンク下へ保管、日付等メモ)</label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="忘れ物あり">忘れ物あり <span class="lemon-yellow-highlight">※ある場合のみ</span>、アルバムへ</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ トイレ掃除</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="詰まりチェック" data-required="true">詰まりチェック<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="LINEで報告_詰まり"><span class="line-report-highlight">LINEで報告</span>※詰まりが解消しない場合、緊急のため急いで報告してください</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="手洗い台" data-required="true">手洗い台<span class="required-asterisk">*</span>(ティッシュ等)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="便座" data-required="true">便座<span class="required-asterisk">*</span>(ペーパー&クリーナー)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="便器" data-required="true">便器<span class="required-asterisk">*</span>(ブラシ&ペーパー&クリーナー)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="床_トイレ" data-required="true">床<span class="required-asterisk">*</span>(掃除機&ペーパー&クリーナー)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="汚物入れ袋交換">汚物入れ袋交換 <span class="lemon-yellow-highlight">※使用がある場合のみ</span></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 調理器具チェック</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="洗浄">洗浄 <span class="lemon-yellow-highlight">※汚れがある場合のみ</span></label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="冷蔵庫" data-required="true">冷蔵庫<span class="required-asterisk">*</span>（残置は廃棄）</label>
+                    <label><input type="checkbox" name="checklist" value="レンジ" data-required="true">レンジ<span class="required-asterisk">*</span></label>
+                    <label><input type="checkbox" name="checklist" value="ケトル" data-required="true">ケトル<span class="required-asterisk">*</span> ※水残り注意、完全乾燥させる</label>
+                    <label><input type="checkbox" name="checklist" value="食器" data-required="true">食器<span class="required-asterisk">*</span></label>
+                    <label><input type="checkbox" name="checklist" value="カトラリー等" data-required="true">カトラリー等<span class="required-asterisk">*</span></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 各所清掃</legend>
+                
+                <div class="checkbox-group">
+                    <label>テーブル・ローテーブル・司会台</label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="掃き掃除_テーブル" data-required="true">掃き掃除<span class="required-asterisk">*</span>（ダスター等）</label>
+                    <label><input type="checkbox" name="checklist" value="拭き掃除_テーブル" data-required="true">拭き掃除<span class="required-asterisk">*</span>(水拭き or セスキ)</label>
+                    <label><input type="checkbox" name="checklist" value="乾拭き_テーブル" data-required="true">乾拭き<span class="required-asterisk">*</span>（ダスター等）</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label>イス</label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="掃き掃除_イス" data-required="true">掃き掃除<span class="required-asterisk">*</span>（ダスター等）</label>
+                    <label><input type="checkbox" name="checklist" value="拭き掃除_イス">拭き掃除(水拭き or セスキ) <span class="lemon-yellow-highlight">※汚れがある場合のみ</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label>ソファー</label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="掃き掃除_ソファー" data-required="true">掃き掃除<span class="required-asterisk">*</span>（コロコロ等）</label>
+                    <label><input type="checkbox" name="checklist" value="拭き掃除_ソファー">拭き掃除(水拭き or 中性洗剤) <span class="lemon-yellow-highlight">※汚れがある場合のみ</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label>床</label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="家具をズラす" data-required="true">家具をズラす<span class="required-asterisk">*</span> ※圧倒的に早いです</label>
+                    <label><input type="checkbox" name="checklist" value="掃き_床" data-required="true">掃き<span class="required-asterisk">*</span> (掃除機)</label>
+                    <label><input type="checkbox" name="checklist" value="拭き_床">拭き(ウェットシート & セスキ) <span class="lemon-yellow-highlight">※汚れがある場合のみ</span></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 整頓</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="家具整頓" data-required="true">家具整頓<span class="required-asterisk">*</span>(写真参照) <a href="https://www.canva.com/design/DAGjXXrPRJU/0X6aSUyjkQt0ZpY5jHKGcQ/view?utm_content=DAGjXXrPRJU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3e0bba6823#10" target="_blank" style="color: #007bff; text-decoration: underline;">写真リンク</a></label>
+                    <p class="info-text">・家具のラインを意識<br>・照明の真下<br>・クッションや背もたれのシワ伸ばし<br>・"使用感"をなくす</p>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="備品整頓" data-required="true">備品整頓<span class="required-asterisk">*</span>(写真参照) <a href="https://www.canva.com/design/DAGjXXrPRJU/0X6aSUyjkQt0ZpY5jHKGcQ/view?utm_content=DAGjXXrPRJU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3e0bba6823#11" target="_blank" style="color: #007bff; text-decoration: underline;">写真リンク</a></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 消耗品補充</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="ハンドソープ">ハンドソープ</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="中性洗剤">中性洗剤</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="トイレットペーパー">トイレットペーパー</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="ティッシュ">ティッシュ</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="床シート">床シート</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="ゴミ袋">ゴミ袋</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="不足報告">不足報告 <span class="lemon-yellow-highlight">※残り少ない場合のみ</span></label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="LINEで報告_消耗品"><span class="line-report-highlight">LINEで報告</span>「〇〇があと少しです。」等</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 布巾・ダスター</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="洗浄_布巾" data-required="true">洗浄<span class="required-asterisk">*</span>(中性洗剤)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="干す" data-required="true">干す<span class="required-asterisk">*</span></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ キッチン</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="シンク洗い" data-required="true">シンク洗い<span class="required-asterisk">*</span>(スポンジ等)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="排水溝洗い" data-required="true">排水溝洗い<span class="required-asterisk">*</span>(スポンジ等)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="シンク周り拭きあげ" data-required="true">シンク周り拭きあげ<span class="required-asterisk">*</span></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ ゴミ</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="清掃ゴミまとめ" data-required="true">清掃ゴミまとめ<span class="required-asterisk">*</span>（シートなど）</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="掃除機のカップ" data-required="true">掃除機のカップ<span class="required-asterisk">*</span></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 特記事項</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="特記事項あり">あり <span class="lemon-yellow-highlight">※特記事項がある場合のみ</span></label>
+                </div>
+
+                <div class="checkbox-group" style="margin-left: 25px;">
+                    <label><input type="checkbox" name="checklist" value="LINEで報告_特記事項"><span class="line-report-highlight">LINEで報告</span>「ソファーに大きなシミが！」「ゴミが放置されていました」等</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 最終調整</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="照明色調整" data-required="true">照明色調整<span class="required-asterisk">*</span>（リモコン操作）</label>
+                    <p class="info-text">(明るさ最大→カラーホワイト最大→オレンジ3回)</p>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="窓閉める" data-required="true">窓閉める<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="ロールスクリーン上げる" data-required="true">ロールスクリーン上げる<span class="required-asterisk">*</span> (4ヶ所)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="エアコン設定" data-required="true">エアコン設定<span class="required-asterisk">*</span></label>
+                    <p class="info-text">(夏:冷房27℃、冬:暖房19℃)</p>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 撮影</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="写真アップロード" data-required="true">写真アップロード<span class="required-asterisk">*</span></label>
+                    <p class="info-text"><span class="lemon-yellow-highlight">(郵便物)</span>、 <span class="lemon-yellow-highlight">(忘れ物)</span>、 トイレ、手洗い、 シンク・排水カゴ、 室内全体〈数カット〉、 備品棚、 <span class="lemon-yellow-highlight">(回収ゴミ)</span>など複数枚まとめてアルバムへ（アルバムタイトル例：2025/06/24 大畠）</p>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>■ 戸締り・消灯</legend>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="換気扇オン_奥" data-required="true">換気扇オン(奥)<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="換気扇オフ_手前" data-required="true">換気扇オフ(手前)<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="照明オフ" data-required="true">照明オフ<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="キッチン照明オン" data-required="true">キッチン照明オン<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="戸締り" data-required="true">戸締り<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="清掃ゴミ出し" data-required="true">清掃ゴミ出し<span class="required-asterisk">*</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="checklist" value="回収ゴミ出し">回収ゴミ出し <span class="lemon-yellow-highlight">※ある場合のみ</span></label>
+                </div>
+
+            </fieldset>
+            
+            <div id="validationError" class="validation-error" style="display: none;"></div>
+            
+            <button type="submit" id="submitBtn">報告を送信</button>
+        </form>
+        
+        <div class="loading" id="loading">
+            <p>送信中...</p>
+        </div>
+        
+        <div class="result" id="result">
+            <p id="resultMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
